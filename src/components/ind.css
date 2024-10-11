@@ -1,0 +1,86 @@
+.news-ticker-container {
+    overflow: hidden;
+    height:150px; /* Adjust the height as needed */
+  }
+  
+  .news-ticker {
+    display: inline-block;
+    white-space: nowrap;
+    animation: tickerAnimation 20s linear infinite; /* Adjust the duration as needed */
+    position: absolute;
+    right: -100%; /* Start off the right edge */
+  }
+  
+  @keyframes tickerAnimation {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  .nav{
+    position:relative;
+    font-size: 2rem;
+    text-decoration: none;
+    line-height: 3rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+color:transparent;
+-webkit-text-stroke: 1px rgba(255,255,255,0.5);
+  }
+  .nav::before
+  {
+content:attr(data-text);
+position:absolute;
+color:#da9100;
+width:0;
+overflow: hidden;
+transition:1s;
+border-right:3px solid #fff;
+  }
+  .nav:hover::before{
+    width:100%;
+  }
+
+  @font-face {
+    font-family: 'Goldleaf';
+    src: url('../fonts/GoldleafBoldPersonalUseBold-eZ4dO.ttf') format('truetype');
+    /* Add other font variations (bold, italic, etc.) if needed */
+  }
+  
+  @font-face {
+    font-family: 'cremona';
+    src: url('../fonts/cremona/Cremona-Regular.ttf') format('truetype');
+    /* Add other font variations (bold, italic, etc.) if needed */
+  }
+  @font-face {
+    font-family: 'louis';
+    src: url('../fonts/louis/LouisGeorgeCafe.ttf') format('truetype');
+    /* Add other font variations (bold, italic, etc.) if needed */
+  }
+
+  .nav2{
+    position:relative;
+    font-size: 1rem;
+    text-decoration: none;
+    line-height: 3rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+color:transparent;
+-webkit-text-stroke: 1px rgba(255,255,255,0.5);
+  }
+  .nav2::before
+  {
+content:attr(data-text);
+position:absolute;
+color:#da9100;
+width:0;
+overflow: hidden;
+transition:1s;
+
+
+  }
+  .nav2:hover::before{
+    width:100%;
+  }

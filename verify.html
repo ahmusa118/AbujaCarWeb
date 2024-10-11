@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stripe Identity Verification</title>
+
+  <!-- Add the Stripe.js library -->
+  <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body>
+  <h1>Identity Verification</h1>
+
+  <!-- Add a button to initiate the Identity Verification process -->
+  <button id="verifyButton">Start Identity Verification</button>
+
+  <script>
+    // Your publishable key from the Stripe dashboard
+    const stripePublishableKey = 'your_stripe_publishable_key';
+
+    // Initialize Stripe.js with your publishable key
+    const stripe = Stripe(stripePublishableKey);
+
+    // Add an event listener to the button to initiate Identity Verification
+    document.getElementById('verifyButton').addEventListener('click', async function () {
+      try {
+        // Create a setupIntent to initiate Identity Verification
+        const { setupIntent, error } = await stripe.setupIntents.create({
+          usage: 'on_session',
+        });
+
+        if (error) {
+          console.error('Error creating SetupIntent:', error);
+          alert('An error occurred while initiating Identity Verification.');
+          return;
+        }
+
+        // Confirm the setupIntent to start the Identity Verification process
+        const { paymentIntent, error: confirmationError } = await stripe.confirmSetupIntent(setupIntent.client_secret);
+
+        if (confirmationError) {
+          console.error('Error confirming SetupIntent:', confirmationError);
+          alert('An error occurred during the Identity Verification process.');
+          return;
+        }
+
+        // Redirect the user to the hosted Identity Verification page
+        window.location.href = paymentIntent.next_action.redirect_to_url.url;
+      } catch (error) {
+        console.error('Error:', error);
+        alert('An unexpected error occurred.');
+      }
+    });
+  </script>
+</body>
+</html>

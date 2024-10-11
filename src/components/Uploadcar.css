@@ -1,0 +1,47 @@
+/* Uploadcar.css */
+.upload-car-form {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    background-color: #faf9f6;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .upload-car-form label {
+    display: block;
+    margin-bottom: 8px;
+  }
+  
+  .upload-car-form input,
+  .upload-car-form select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+  }
+  
+  .upload-car-form button {
+    background-color: #1890ff;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .upload-car-form button:hover {
+    background-color: #096dd9;
+  }
+  
+  .upload-car-form .ant-carousel {
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .upload-car-form .ant-carousel img {
+    width: 100%;
+    border-radius: 8px;
+  }
+  

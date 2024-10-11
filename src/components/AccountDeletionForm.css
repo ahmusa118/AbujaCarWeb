@@ -1,0 +1,55 @@
+.form-container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .deletion-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .deletion-form label {
+    margin-bottom: 8px;
+    color: #555;
+  }
+  
+  .deletion-form input,
+  .deletion-form select,
+  .deletion-form textarea {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  .deletion-form textarea {
+    height: 100px;
+    resize: vertical;
+  }
+  
+  .deletion-form button {
+    padding: 10px;
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .deletion-form button:hover {
+    background-color: #c9302c;
+  }
+  
